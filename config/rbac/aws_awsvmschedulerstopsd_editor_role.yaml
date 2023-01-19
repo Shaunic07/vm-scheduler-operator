@@ -1,0 +1,31 @@
+# permissions for end users to edit awsvmschedulerstopsds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: awsvmschedulerstopsd-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: vm-scheduler-operator
+    app.kubernetes.io/part-of: vm-scheduler-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: awsvmschedulerstopsd-editor-role
+rules:
+- apiGroups:
+  - aws.xyzcompany.com
+  resources:
+  - awsvmschedulerstopsds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - aws.xyzcompany.com
+  resources:
+  - awsvmschedulerstopsds/status
+  verbs:
+  - get

@@ -1,0 +1,23 @@
+apiVersion: aws.xyzcompany.com/v1
+kind: AWSVMSchedulerStartsd
+metadata:
+  labels:
+    app.kubernetes.io/name: awsvmschedulerstartsd
+    app.kubernetes.io/instance: awsvmschedulerstartsd-sample
+    app.kubernetes.io/part-of: vm-scheduler-operator-sd
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: vm-scheduler-operator-sd
+  name: awsvmschedulerstartsd-sample
+spec:
+  # TODO(user): Add fields here
+  # Provide image name
+  image: "quay.io/manoj_dhanorkar/awsvmscheduler:v1.0"
+  
+  # Provide comma separated list of AWS instance ids which will be scheduled by CR 
+  instanceIds: "i-007052640f6a6373c"
+
+
+  # Schedule period for the CronJob.
+  # This spec allow you to setup the stop schedule for VM
+  # Default: "0 18 * * *" # every weekday at 6 PM
+  startSchedule: "* * * * 1-5"

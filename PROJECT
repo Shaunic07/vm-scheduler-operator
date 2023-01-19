@@ -1,0 +1,65 @@
+domain: xyzcompany.com
+layout:
+- go.kubebuilder.io/v3
+multigroup: true
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: vm-scheduler-operator
+repo: github.com/Shaunic07/vm-scheduler-operatorr
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: xyzcompany.com
+  group: aws
+  kind: AWSVMSchedulerStartsd
+  path: github.com/Shaunic07/vm-scheduler-operatorr/apis/aws/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: xyzcompany.com
+  group: azure
+  kind: AzureVMSchedulerStartsd
+  path: github.com/Shaunic07/vm-scheduler-operatorr/apis/azure/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: xyzcompany.com
+  group: gcp
+  kind: GCPVMSchedulerStartsd
+  path: github.com/Shaunic07/vm-scheduler-operatorr/apis/gcp/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: xyzcompany.com
+  group: aws
+  kind: AWSVMSchedulerStopsd
+  path: github.com/Shaunic07/vm-scheduler-operatorr/apis/aws/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: xyzcompany.com
+  group: azure
+  kind: AzureVMSchedulerStopsd
+  path: github.com/Shaunic07/vm-scheduler-operatorr/apis/azure/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: xyzcompany.com
+  group: gcp
+  kind: GCPVMSchedulerStopsd
+  path: github.com/Shaunic07/vm-scheduler-operatorr/apis/gcp/v1
+  version: v1
+version: "3"

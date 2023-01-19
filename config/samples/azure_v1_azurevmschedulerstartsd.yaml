@@ -1,0 +1,12 @@
+apiVersion: azure.xyzcompany.com/v1
+kind: AzureVMSchedulerStartsd
+metadata:
+  labels:
+    app.kubernetes.io/name: azurevmschedulerstartsd
+    app.kubernetes.io/instance: azurevmschedulerstartsd-sample
+    app.kubernetes.io/part-of: vm-scheduler-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: vm-scheduler-operator
+  name: azurevmschedulerstartsd-sample
+spec:
+  # TODO(user): Add fields here
